@@ -5,6 +5,7 @@ import { UpdateUserForm } from "./components/updateUserForm";
 import { GetUserById } from "./components/getUserById";
 import { ListUsers } from "./components/listUsers";
 import { DeleteUser } from "./components/deleteUser";
+import { GetUsersByIdade } from "./components/getUsersByIdade";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <UpdateUserForm />
       <DeleteUser />
       <GetUserById />
+      <GetUsersByIdade />
       <ListUsers />
     </div>
     </>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { _axios } from "../services/axios";
 import { v4 as uuidv4 } from "uuid";
 import { User } from "../@types";
+import { userSchema } from "../zod";
 
 export const CreateUserForm = () => {
 	const [formData, setFormData] = useState<User>({
@@ -22,6 +23,17 @@ export const CreateUserForm = () => {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const newUser = { ...formData, id: uuidv4() };
+
+		const validationResult = userSchema.safeParse(newUser);
+
+		if (!validationResult.success) {
+			const errorMessages = validationResult.error.errors
+				.map((err) => `${err.path.join(".")} - ${err.message}`)
+				.join("\n");
+			alert(`Erro na validação:\n${errorMessages}`);
+			return;
+		}
+
 		try {
 			await _axios.post("/users", newUser);
 			alert("Usuário criado com sucesso!");
