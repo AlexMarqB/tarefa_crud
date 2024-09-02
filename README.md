@@ -1,4 +1,4 @@
-# Tarefa CRUD
+# Tarefa CRUD - [repositório](https://github.com/AlexMarqB/tarefa_crud)
 
 Este projeto é uma aplicação CRUD simples desenvolvida com React, TypeScript, e Zod para validação de dados. Ele utiliza o JSON Server para simular uma API RESTful.
 
