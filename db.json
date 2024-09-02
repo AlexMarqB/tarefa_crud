@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "52ab425e-f738-49ab-aa68-485d602b0333",
+      "nome": "Alex",
+      "sobrenome": "Marques",
+      "idade": "19",
+      "altura": "183",
+      "peso": "89"
+    }
+  ]
+}
